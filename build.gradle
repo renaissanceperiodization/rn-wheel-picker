@@ -1,6 +1,10 @@
+apply plugin: 'maven'
+    
+group = 'com.github.renaissanceperiodization'
+
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
@@ -9,7 +13,7 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
+        mavenCentral()
     }
 }
 
