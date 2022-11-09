@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
+group = "com.github.renaissanceperiodization"
 version = "1.0.3"
 
 android {
@@ -16,6 +18,17 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+afterEvaluate {
+    publishing {
+        release(MavenPublication) {
+            from components.release
+            groupId = 'com.github.renaissanceperiodization'
+	    artifactId = 'wheelpicker'
+            version = '1.0.3'
         }
     }
 }
